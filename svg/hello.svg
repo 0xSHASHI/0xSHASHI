@@ -1,0 +1,51 @@
+<svg width="220" height="50" viewBox="0 0 220 50" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      /* --- STEP 1: EMBED THE LEXEND FONT --- */
+      @font-face {
+        font-family: 'Lexend';
+        font-style: normal;
+        font-weight: 600; /* Corresponds to SemiBold */
+        /* Paste the Base64 string from the .ttf file below */
+        src: url(data:font/ttf;base64,PASTE_YOUR_LEXEND_BASE64_STRING_HERE);
+      }
+      
+      @keyframes slide-up {
+        0% { opacity: 0; transform: translateY(25px); }
+        20% { opacity: 1; transform: translateY(0); }
+        80% { opacity: 1; transform: translateY(0); }
+        100% { opacity: 0; transform: translateY(-25px); }
+      }
+
+      .text-container {
+        /* Replicates "font-semibold" */
+        font-weight: 600; 
+        /* Replicates "text-2xl" */
+        font-size: 24px; 
+        /* --- STEP 2: USE THE EMBEDDED FONT --- */
+        font-family: 'Lexend', sans-serif;
+        text-anchor: middle;
+        fill: #24292e;
+      }
+      
+      @media (prefers-color-scheme: dark) {
+        .text-container { fill: #c9d1d9; }
+      }
+
+      .char {
+        opacity: 0;
+        animation: slide-up 5s infinite;
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+      }
+    </style>
+  </defs>
+
+  <text x="50%" y="50%" dominant-baseline="middle" class="text-container">
+    <tspan class="char" style="animation-delay: 0.1s">H</tspan>
+    <tspan class="char" style="animation-delay: 0.2s">e</tspan>
+    <tspan class="char" style="animation-delay: 0.3s">l</tspan>
+    <tspan class="char" style="animation-delay: 0.4s">l</tspan>
+    <tspan class="char" style="animation-delay: 0.5s">o</tspan>
+    <tspan class="char" style="animation-delay: 0.6s">,</tspan>
+  </text>
+</svg>
